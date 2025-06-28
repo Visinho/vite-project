@@ -29,6 +29,10 @@ const LoginPopup = ({ setShowLogin }) => {
             required
           />
         </div>
+        <div className="google-login-btn">
+          <img src={assets.google_icon} alt="Google" />
+          <p>Continue with Google</p>
+        </div>
         <button>{currState === "Sign Up" ? "Create Account" : "Login"}</button>
         <div className="login-popup-condition">
           <input type="checkbox" required />
