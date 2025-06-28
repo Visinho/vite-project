@@ -10,7 +10,7 @@ const PlaceOrder = () => {
     <div>
       <form className="place-order">
         <div className="place-order-left">
-          <p className="title"></p>
+          <p className="title">DELIVERY INFORMATION</p>
           <div className="multi-fields">
             <input type="text" placeholder='First Name'/>
             <input type="text" placeholder='Last Name'/>
