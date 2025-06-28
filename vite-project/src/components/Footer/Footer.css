@@ -62,7 +62,14 @@
         flex-direction: column;
         gap: 35px;
     }
+     .footer-content-right{
+        margin-top: -30px;
+    }
     .footer-copyright{
         text-align: center;
+        margin-top: -100px;
+    }
+    .footer-social-icons{
+        margin-bottom: -20px;
     }
 }
