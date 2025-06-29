@@ -30,7 +30,7 @@ const LoginPopup = ({ setShowLogin }) => {
           />
         </div>
         <div className="google-login-btn">
-          <img src={assets.google_icon} alt="Google" />
+          <img src={assets.google_logo} alt="Google" />
           <p>Continue with Google</p>
         </div>
         <button>{currState === "Sign Up" ? "Create Account" : "Login"}</button>
