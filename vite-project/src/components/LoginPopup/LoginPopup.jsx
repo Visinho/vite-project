@@ -32,6 +32,10 @@ const LoginPopup = ({ setShowLogin }) => {
     }
 
     const response = await axios.post(newUrl, data);
+
+    if (response.data.success) {
+      
+    }
   }
 
   return (
