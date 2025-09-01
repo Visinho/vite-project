@@ -38,6 +38,10 @@ export const StoreContextProvider = (props) => {
   return totalAmount;
 };
 
+useEffect(()=> {
+  
+})
+
 
   const contextValue = {
     food_list,
