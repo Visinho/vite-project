@@ -2,10 +2,8 @@ import { createContext, useEffect, useState } from "react";
 // import { food_list } from "../assets/assets.js"; //Data from assets.js
 import axios from "axios";
 
-// Create the context
 export const StoreContext = createContext(null);
 
-// Named export for the provider
 export const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const url = "http://localhost:4000";
@@ -29,10 +27,10 @@ export const StoreContextProvider = (props) => {
     for (const itemId in cartItems) {
       if (cartItems[itemId] > 0) {
         const itemInfo = food_list.find(
-          (product) => String(product.food_id) === itemId
+          (product) => String(product._id) === itemId
         );
         if (itemInfo) {
-          totalAmount += itemInfo.food_price * cartItems[itemId];
+          totalAmount += itemInfo.price * cartItems[itemId];
         }
       }
     }
