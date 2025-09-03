@@ -123,12 +123,10 @@ const removeFromCart = async (itemId) => {
     if (savedToken) {
       setToken(savedToken);
 
-      // ✅ Load saved cart instantly
       if (savedCart) {
         setCartItems(JSON.parse(savedCart));
       }
 
-      // ✅ Then sync with backend to get latest cart data
       await loadCartData(savedToken);
     } else {
       setCartItems({});
