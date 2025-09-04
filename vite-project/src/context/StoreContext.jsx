@@ -102,6 +102,7 @@ const removeFromCart = async (itemId) => {
     localStorage.setItem("cartItems", JSON.stringify(response.data.cartData))
   }
 
+
   // useEffect(() => {
   //   async function loadData() {
   //     await fetchFoodList();
