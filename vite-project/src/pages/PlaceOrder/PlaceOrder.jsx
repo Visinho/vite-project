@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext';
 
@@ -24,23 +24,22 @@ const PlaceOrder = () => {
     setData(data=>({...data, [name]: value}))
   }
 
+  // useEffect(()=> {
+  //   console.log(data)
+  // }, [data])
+
   const placeOrder = async (event) => {
     event.preventDefault();
     let orderItems = [];
+
     food_list.map((item)=> {
       if(cartItems[item._id] > 0) {
-        let itemInfo = item;
+        let itemInfo = {...item};
         itemInfo["quantity"] = cartItems[item._id]
         orderItems.push(itemInfo)
       }
     })
-    console.log(orderItems);
   }
-
-
-
-
-
 
   return (
     <div>
@@ -81,7 +80,7 @@ const PlaceOrder = () => {
               <b>₦{getTotalCartAmount() === 0 ? 0: getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button type='submit'>PROCEED TO PAYMENT</button>
+          <button type="submit" onClick={placeOrder}>PROCEED TO PAYMENT</button>
         </div>
         </div>
       </form>

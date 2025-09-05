@@ -21,6 +21,7 @@ export const StoreContextProvider = (props) => {
   //   }
   // };
 
+  // Main one 
   const addToCart = async (itemId) => {
   let updatedCart;
 
@@ -38,6 +39,7 @@ export const StoreContextProvider = (props) => {
   }
 };
 
+
 //   const removeFromCart = async (itemId) => {
 //   setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
 
@@ -49,6 +51,8 @@ export const StoreContextProvider = (props) => {
 //   }
 // };
 
+
+// Main one
 const removeFromCart = async (itemId) => {
   let updatedCart = { ...cartItems };
 
@@ -68,6 +72,7 @@ const removeFromCart = async (itemId) => {
     });
   }
 };
+
 
 
   const getTotalCartAmount = () => {
@@ -96,11 +101,13 @@ const removeFromCart = async (itemId) => {
     }
   };
 
+  // Main one
   const loadCartData = async (token) => {
     const response = await axios.post(url + "/api/cart/get", {}, {headers: {token}});
     setCartItems(response.data.cartData);
     localStorage.setItem("cartItems", JSON.stringify(response.data.cartData))
   }
+
 
 
   // useEffect(() => {
