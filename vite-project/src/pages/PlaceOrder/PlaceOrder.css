@@ -39,3 +39,29 @@
 .place-order .cart-total button{
     margin-top: 30px;
 }
+
+.payment-info {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.payment-info h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.acct-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.delivery-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #888;
+  font-style: italic;
+}
