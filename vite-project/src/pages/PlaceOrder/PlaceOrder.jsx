@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
 
@@ -31,7 +31,7 @@ const PlaceOrder = () => {
     event.preventDefault();
 
     if (getTotalCartAmount() === 0 || Object.keys(cartItems).length === 0) {
-    alert("Your cart is empty! Please add some items before proceeding.");
+    toast.error("Your cart is empty! Please add some items before proceeding.");
     return; 
   }
 
@@ -55,7 +55,7 @@ const PlaceOrder = () => {
       window.location.replace(session_url);
     }
     else{
-      alert("Something went wrong!")
+      toast.error("Something went wrong!")
     }
   }
 
@@ -63,11 +63,12 @@ const PlaceOrder = () => {
 
   useEffect(() => {
     if (!token) {
-      navigate('/cart')
+        toast.error("You are not logged in!");
+        setTimeout(() => navigate('/cart'), 500);
     }
     else if (getTotalCartAmount() === 0) {
-      navigate("/cart");
-      alert("You are not logged in!")
+     toast.error("Your cart is empty!");
+    setTimeout(() => navigate("/cart"), 500);
     }
   }, [token])
 
