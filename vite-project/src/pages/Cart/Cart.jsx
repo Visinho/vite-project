@@ -34,7 +34,6 @@ const Cart = () => {
                     <p>{item.name}</p>
                     <p>₦{item.price}</p>
 
-                    {/* Quantity control buttons */}
                     <div className="quantity-control">
                       <button
                         className="qty-btn"
