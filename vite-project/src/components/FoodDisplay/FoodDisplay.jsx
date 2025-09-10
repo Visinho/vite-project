@@ -23,6 +23,8 @@ const FoodDisplay = ({ category }) => {
             description={item.description}
             price={item.price}
             image={item.image}
+            availableFrom={item.availableFrom}
+            availableTo={item.availableTo}
           />
         ))}
       </div>
